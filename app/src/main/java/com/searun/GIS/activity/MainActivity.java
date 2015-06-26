@@ -1,40 +1,42 @@
 package com.searun.GIS.activity;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.searun.GIS.R;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity implements View.OnClickListener{
+
+    private ImageView leftImage;
+    private ImageView rightImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        findView();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+   private void findView(){
+       leftImage = (ImageView) findViewById(R.id.left_image);
+       leftImage.setOnClickListener(this);
+
+       rightImage = (ImageView) findViewById(R.id.right_image);
+       rightImage.setOnClickListener(this);
+   }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.left_image:
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+                break;
+            case R.id.right_image:
+
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
