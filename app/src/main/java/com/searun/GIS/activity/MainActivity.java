@@ -52,7 +52,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
             if (state.equals(Environment.MEDIA_MOUNTED)) {
                 File fileDir = new File(avatorpath);
                 if (!fileDir.exists()) {
-//                  fileDir.mkdirs();// 创建文件夹
+                  fileDir.mkdirs();// 创建文件夹
                     Log.i("11","11");
                 }
                 photographpath = avatorpath + "qmimage" + new Date().getTime() + ".jpg";
@@ -75,7 +75,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                     if (state.equals(Environment.MEDIA_MOUNTED)){
                         File fileDir = new File(avatorpath);
                         if ( !fileDir.exists()){
-//                            fileDir.mkdirs();//创建文件夹
+                            fileDir.mkdirs();//创建文件夹
                             Log.i("11","11");
                         }
                         if ("".equals(photographpath)) {
