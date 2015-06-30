@@ -25,4 +25,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile files('libs/android-async-http-1.4.5.jar')
     compile files('libs/gson-2.1.jar')
+    compile files('libs/universal-image-loader-1.9.4-SNAPSHOT.jar')
 }
