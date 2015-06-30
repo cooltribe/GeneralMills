@@ -53,7 +53,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 File fileDir = new File(avatorpath);
                 if (!fileDir.exists()) {
                   fileDir.mkdirs();// 创建文件夹
-                    Log.i("11","11");
                 }
                 photographpath = avatorpath + "qmimage" + new Date().getTime() + ".jpg";
                 //鉴于三星手机拍照旋转后生命周期原因导致路径丢失，所以保存在application中
@@ -76,7 +75,6 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         File fileDir = new File(avatorpath);
                         if ( !fileDir.exists()){
                             fileDir.mkdirs();//创建文件夹
-                            Log.i("11","11");
                         }
                         if ("".equals(photographpath)) {
                             photographpath = app.photographpath;
