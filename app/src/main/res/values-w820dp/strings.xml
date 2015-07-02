@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="camera_error">未找到存储卡，无法存储照片</string>
+    <string name="username">手机号码/用户名</string>
+    <string name="password">密码</string>
+    <string name="forgot_password">忘记密码?</string>
+</resources>

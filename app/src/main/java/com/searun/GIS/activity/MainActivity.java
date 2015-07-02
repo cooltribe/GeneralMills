@@ -1,6 +1,7 @@
 package com.searun.GIS.activity;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,6 +16,7 @@ import android.widget.ImageView;
 import com.searun.GIS.R;
 import com.searun.GIS.application.MyApplication;
 import com.searun.GIS.utils.ImageUtil;
+import com.searun.GIS.utils.NetUtils;
 import com.searun.GIS.utils.T;
 
 import java.io.File;
@@ -28,12 +30,14 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private ImageView rightImage;
     private MyApplication app;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         app = (MyApplication) getApplication();
         findView();
+
         Log.i("???",avatorpath);
     }
 
@@ -83,8 +87,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         app.sheariamgepath = sheariamgepath;
                         leftImage.setImageBitmap(ImageUtil.getimage(photographpath, sheariamgepath, avatorpath));
                     } else {
-                        T.showShort(this,"未找到存储卡，无法存储照片");
+                        T.showShort(this,getString(R.string.camera_error));
                     }
+                    break;
+                case 0:
+                    Log.i("settingok","settingok");
                     break;
             }
         }
@@ -98,6 +105,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
        rightImage.setOnClickListener(this);
    }
 
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -105,7 +113,10 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 getPhotoByCamere();
                 break;
             case R.id.right_image:
-
+//                Log.i("??", 1 + "" + NetUtils.isConnected(this) + "2," + NetUtils.isWifi(this));
+                if ( !NetUtils.isConnected(this)) {
+                    NetUtils.openSetting(this);
+                }
                 break;
         }
     }

@@ -4,5 +4,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="camera_error">未找到存储卡，无法存储照片</string>
+    <string name="username">手机号码/用户名</string>
+    <string name="password">密码</string>
+    <string name="forgot_password">忘记密码?</string>
+    <string name="title_activity_register">RegisterActivity</string>
 
 </resources>
