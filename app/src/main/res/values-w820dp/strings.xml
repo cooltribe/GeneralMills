@@ -4,4 +4,5 @@
     <string name="username">手机号码/用户名</string>
     <string name="password">密码</string>
     <string name="forgot_password">忘记密码?</string>
+    <string name="yanzhengma">获取验证码</string>
 </resources>
