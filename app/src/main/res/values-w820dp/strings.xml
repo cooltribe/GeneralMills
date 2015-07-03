@@ -5,4 +5,11 @@
     <string name="password">密码</string>
     <string name="forgot_password">忘记密码?</string>
     <string name="yanzhengma">获取验证码</string>
+    <string name="person_data_string">个人资料</string>
+    <string name="car_manage_string">车辆管理</string>
+    <string name="login_out">退  出</string>
+    <string name="dispatch_NO_string">调度单号</string>
+    <string name="car_NO_string">车牌号</string>
+    <string name="load_count_string">装载数量</string>
+    <string name="operate">操作</string>
 </resources>
