@@ -14,6 +14,7 @@ public class MyEditText extends LinearLayout{
 
     private TextView left;
     private EditText right;
+    private TextView center;
 
     public MyEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -30,7 +31,17 @@ public class MyEditText extends LinearLayout{
     public void init(Context context){
         View view = LayoutInflater.from(context).inflate(R.layout.myview_edittext,this,false);
         left = (TextView) view.findViewById(R.id.left_tv);
+        center = (TextView) view.findViewById(R.id.center_tv);
         right = (EditText) view.findViewById(R.id.right_et);
     }
+    public void seTvtVisibility(int visibility){
+        center.setVisibility(visibility);
+    }
 
+    public void seEttVisibility(int visibility){
+        right.setVisibility(visibility);
+    }
+    public void setHint(String string){
+        right.setHint(string);
+    }
 }

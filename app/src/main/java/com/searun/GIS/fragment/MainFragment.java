@@ -1,5 +1,6 @@
 package com.searun.GIS.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,6 +15,15 @@ public class MainFragment extends Fragment {
 
     private CircleImageView icon;
     private TextView title;
+    private String titleString;
+
+    @SuppressLint("ValidFragment")
+    public MainFragment(String titleString) {
+        this.titleString = titleString;
+    }
+
+    public MainFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -27,7 +37,7 @@ public class MainFragment extends Fragment {
     private void findView(View view){
         icon = (CircleImageView) view.findViewById(R.id.icon);
         title = (TextView) view.findViewById(R.id.title);
-        title.setText("订单中心");
+        title.setText(titleString);
     }
 
 }
