@@ -9,60 +9,40 @@
    <include
        layout="@layout/fragment_title"/>
     <com.searun.GIS.view.MyEditText
-        android:id="@+id/plate_number"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <include
         layout="@layout/line"/>
     <com.searun.GIS.view.MyEditText
-        android:id="@+id/car_type"
+        android:id="@+id/actual_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <include
         layout="@layout/line"/>
     <com.searun.GIS.view.MyEditText
-        android:id="@+id/car_size"
+        android:id="@+id/address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <include
         layout="@layout/line"/>
     <com.searun.GIS.view.MyEditText
-        android:id="@+id/car_actual_size"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <include
-        layout="@layout/line"/>
-    <com.searun.GIS.view.MyEditText
-        android:id="@+id/car_box_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <include
-        layout="@layout/line"/>
-    <com.searun.GIS.view.MyEditText
-        android:id="@+id/car_order_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
-    <include
-        layout="@layout/line"/>
-    <com.searun.GIS.view.MyEditText
-        android:id="@+id/car_custom_count"
+        android:id="@+id/mobile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <include
         layout="@layout/line"/>
     <Button
+        android:id="@+id/config_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="确   定"
         android:textColor="#fff"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/redbj"/>

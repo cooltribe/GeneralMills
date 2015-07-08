@@ -29,17 +29,23 @@ public class MyEditText extends LinearLayout{
         init(context);
     }
     public void init(Context context){
-        View view = LayoutInflater.from(context).inflate(R.layout.myview_edittext,this,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.myview_edittext,this,true);
         left = (TextView) view.findViewById(R.id.left_tv);
         center = (TextView) view.findViewById(R.id.center_tv);
         right = (EditText) view.findViewById(R.id.right_et);
     }
-    public void seTvtVisibility(int visibility){
+    public void setCenterVisibility(int visibility){
         center.setVisibility(visibility);
     }
 
-    public void seEttVisibility(int visibility){
+    public void setRightVisibility(int visibility){
         right.setVisibility(visibility);
+    }
+    public void setText(String string){
+        left.setText(string);
+    }
+    public void setCenterText(String string){
+        center.setText(string);
     }
     public void setHint(String string){
         right.setHint(string);

@@ -3,7 +3,7 @@ package com.searun.GIS.fragment;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,19 +48,25 @@ public class CarManageFragment extends Fragment {
         title = (TextView) view.findViewById(R.id.title);
         title.setText(titleString);
         plateNumber = (MyEditText) view.findViewById(R.id.plate_number);
-
+        plateNumber.setText("车牌号");
 
         carType = (MyEditText) view.findViewById(R.id.car_type);
+        carType.setText("车型");
 
         carSize = (MyEditText) view.findViewById(R.id.car_size);
+        carSize.setText("容积");
 
         carActualSize = (MyEditText) view.findViewById(R.id.car_actual_size);
+        carActualSize.setText("实际容积");
 
         carBoxCount = (MyEditText) view.findViewById(R.id.car_box_count);
+        carBoxCount.setText("装载箱数");
 
         carOrderCount = (MyEditText) view.findViewById(R.id.car_order_count);
+        carOrderCount.setText("订单数");
 
         carCustomCount = (MyEditText) view.findViewById(R.id.car_custom_count);
+        carCustomCount.setText("客户数");
     }
 
 }

@@ -27,8 +27,8 @@ public class SDCardUtils
 	 */
 	public static boolean isSDCardEnable()
 	{
-		return Environment.getExternalStorageState().equals(
-				Environment.MEDIA_MOUNTED);
+		String state = Environment.getExternalStorageState();
+		return state .equals(Environment.MEDIA_MOUNTED) || Environment.MEDIA_MOUNTED_READ_ONLY.equals(state);
 
 	}
 

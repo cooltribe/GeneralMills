@@ -40,6 +40,8 @@ public class MainActivity1 extends Activity implements View.OnClickListener{
         Log.i("???",avatorpath);
     }
 
+
+
     private final String avatorpath = Environment.getExternalStorageDirectory() + "/xxx/avator/";
 
     private String sheariamgepath = ""; // 裁剪后头像路径

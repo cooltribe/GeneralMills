@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -12,13 +13,19 @@ import android.view.View;
 import com.nineoldandroids.view.ViewHelper;
 import com.searun.GIS.R;
 import com.searun.GIS.application.MyApplication;
+import com.searun.GIS.fragment.CarManageFragment;
+import com.searun.GIS.fragment.FreezeRecordFragment;
 import com.searun.GIS.fragment.MainFragment;
+import com.searun.GIS.fragment.MenuLeftFragment;
 import com.searun.GIS.fragment.MenuRightFragment;
+import com.searun.GIS.fragment.PersonDataFragment;
+import com.searun.GIS.fragment.StoreDataFragment;
+import com.searun.GIS.interfacepackage.OnFragmentInteractionListener;
 
 /**
  * Created by 陈玉柱 on 2015/7/2.
  */
-public class MainActivity extends FragmentActivity implements MenuRightFragment.OnFragmentInteractionListener{
+public class MainActivity extends FragmentActivity implements OnFragmentInteractionListener {
 
     private FragmentManager fragmentManager;
     private MyApplication app;
@@ -100,6 +107,7 @@ public class MainActivity extends FragmentActivity implements MenuRightFragment.
     private void init(){
         fragmentManager = getSupportFragmentManager();
         app = (MyApplication) getApplication();
+
     }
     private void findView(){
         mDrawerLayout = (DrawerLayout) findViewById(R.id.id_drawerLayout);
@@ -109,9 +117,11 @@ public class MainActivity extends FragmentActivity implements MenuRightFragment.
         FragmentTransaction ft = fragmentManager.beginTransaction();
         switch (userType){
             case 1:
-              ft.replace(R.id.id_center_main,new MainFragment("订单中心"),"mainfragment");
+                ft.replace(R.id.id_left_menu,new MenuLeftFragment(2),"个人用户");
+                ft.replace(R.id.id_center_main,new MainFragment("订单中心"),"mainfragment");
                 break;
             case 2:
+
                 break;
         }
         ft.commitAllowingStateLoss();
@@ -121,6 +131,19 @@ public class MainActivity extends FragmentActivity implements MenuRightFragment.
     public void onFragmentInteraction(String string) {
         Log.i("hahha",string);
         FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.id_center_main,new MainFragment(string),"mainfragment").commitAllowingStateLoss();
+        mDrawerLayout.closeDrawers();
+        if (string.equals("装车到场")){
+            ft.replace(R.id.id_center_main, new FreezeRecordFragment(), "mainfragment");
+
+        } else if (string.equals("车辆管理")){
+            ft.replace(R.id.id_center_main, new CarManageFragment("车辆管理"), "车辆管理");
+        } else if (string.equals("个人用户")){
+            ft.replace(R.id.id_center_main, new PersonDataFragment("个人用户"), "个人用户");
+        } else if (string.equals("仓管用户")){
+            ft.replace(R.id.id_center_main, new StoreDataFragment("仓管用户"), "仓管用户");
+        }else {
+            ft.replace(R.id.id_center_main, new MainFragment(string), "mainfragment");
+        }
+        ft.commitAllowingStateLoss();
     }
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="grey_transparent">#50000000</color>
+    <color name="Angle_Pressed_Color">#eeeeee</color>
+    <color name="Angle_Pressed_Color2">#999999</color>
+</resources>

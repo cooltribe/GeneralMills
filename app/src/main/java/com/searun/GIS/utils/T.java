@@ -1,5 +1,6 @@
 package com.searun.GIS.utils;
 
+import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -68,7 +69,7 @@ public class T
 
 	/**
 	 * 自定义显示Toast时间
-	 * 
+	 *
 	 * @param context
 	 * @param message
 	 * @param duration
@@ -91,5 +92,6 @@ public class T
 		if (isShow)
 			Toast.makeText(context, message, duration).show();
 	}
+
 
 }
