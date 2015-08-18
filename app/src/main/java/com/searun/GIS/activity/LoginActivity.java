@@ -2,10 +2,7 @@ package com.searun.GIS.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -38,7 +35,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                 intent = new Intent(this,RegisterActivity.class);
                 break;
             case R.id.login_bt:
-                intent = new Intent(this,MainActivity.class);
+                intent = new Intent(this,MainActivity2.class);
                 break;
         }
         startActivity(intent);

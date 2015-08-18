@@ -43,7 +43,7 @@ import java.net.URL;
 public class HttpUtils
 {
 
-	private  static final String BASE_URL = "";
+	private  static final String BASE_URL = "http://192.168.2.36:8877/RemoteService_Jssy/mvc/mobile/inTransit?jsonString=";
 
 	private static AsyncHttpClient client = new AsyncHttpClient(); // 实例话对象
 

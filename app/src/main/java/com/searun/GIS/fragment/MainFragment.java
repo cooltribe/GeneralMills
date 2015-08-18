@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.searun.GIS.R;
 import com.searun.GIS.view.CircleImageView;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends  Fragment{
 
     private CircleImageView icon;
     private TextView title;

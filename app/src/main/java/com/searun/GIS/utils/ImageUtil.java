@@ -6,6 +6,9 @@ package com.searun.GIS.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
+import android.text.TextUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -81,5 +84,61 @@ public class ImageUtil {
         return bitmap;
     }
 
+    /**
+     * 判断照片角度
+     * @param path
+     * @return
+     */
+    public static int readPictureDegree(String path){
+        int degree = 0;
+        try {
+            ExifInterface exifInterface = new ExifInterface(path);
+            int orientation = exifInterface.getAttributeInt(ExifInterface.TAG_ORIENTATION , ExifInterface.ORIENTATION_NORMAL);
 
+            switch (orientation){
+                case ExifInterface.ORIENTATION_ROTATE_90:
+                    degree = 90;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_180:
+                    degree = 180;
+                    break;
+                case ExifInterface.ORIENTATION_ROTATE_270:
+                    degree = 270;
+                    break;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return degree;
+    }
+
+    /**
+     * 旋转照片
+     * @param bitmap
+     * @param degree
+     * @return
+     */
+    public static Bitmap rotateBitmap (Bitmap bitmap ,int degree){
+        if (null != bitmap){
+            Matrix m = new Matrix();
+            m.postRotate(degree);
+            bitmap = Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),m,true);
+            return  bitmap;
+        }
+        return  bitmap;
+    }
+    /**
+     * 删除该目录下的文件
+     *
+     * @param path
+     */
+    public static void delFile(String path) {
+        if (!TextUtils.isEmpty(path)) {
+            File file = new File(path);
+            if (file.exists()) {
+                file.delete();
+            }
+        }
+    }
 }

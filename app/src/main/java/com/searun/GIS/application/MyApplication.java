@@ -12,10 +12,14 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 public class MyApplication extends Application {
     public String photographpath;
     public String sheariamgepath;
+
+    
+
     @Override
     public void onCreate() {
         super.onCreate();
         initImageLoader(getApplicationContext());
+
     }
 
     public static void initImageLoader(Context context) {
@@ -34,4 +38,6 @@ public class MyApplication extends Application {
         // Initialize ImageLoader with configuration.
         ImageLoader.getInstance().init(config.build());
     }
+
+
 }

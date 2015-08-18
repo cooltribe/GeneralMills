@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black"  name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link href="css/master.css" rel="stylesheet" media="screen">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// --><!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+ <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+ <![endif]-->
+<title>通用经转直项目——签收确认</title>
+</head>
+
+<body>
+<header>签收确认 
+  <div class="btn-left"><a href="order-way.html"><img src="images/icon-back.png"  alt="" width="26"/></a></div>
+</header>
+<div class="sign-detail">
+路线：上海-南京<br>
+调度单号：5345845<br>
+作业单号：123456<br>
+通用磨坊(中国)投资有限公司   
+</div>
+<div class="wrap">
+  <form action="receipt.html">
+    <div class="check-line"><input type="checkbox" name="chk_1" style="display:none;"/>
+              <i data-name="chk_1" class="check"></i> 货物缺少</div>
+    <div class="check-line"><input type="checkbox" name="chk_2" style="display:none;"/>
+              <i data-name="chk_2" class="check"></i> 货物缺损</div>
+    <div class="check-line"><input type="checkbox" name="chk_3" style="display:none;"/>
+              <i data-name="chk_3" class="checked"></i> 货物拒收 <input type="text" class="remark"  placeholder="备注："></div>
+    <button type="submit" class="btn-red">签收确认</button>
+  </form>
+</div>
+</body>
+</html>

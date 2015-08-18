@@ -15,7 +15,7 @@ import com.searun.GIS.view.MyEditText;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class CarManageFragment extends Fragment {
+public class CarManageFragment extends  Fragment{
 
     private String titleString;
     private TextView title;

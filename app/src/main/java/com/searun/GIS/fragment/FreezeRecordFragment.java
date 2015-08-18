@@ -23,7 +23,6 @@ import android.widget.TimePicker;
 
 import com.searun.GIS.R;
 import com.searun.GIS.application.MyApplication;
-import com.searun.GIS.utils.CommonUtils;
 import com.searun.GIS.utils.ImageUtil;
 import com.searun.GIS.utils.L;
 import com.searun.GIS.utils.SDCardUtils;
@@ -32,14 +31,13 @@ import com.searun.GIS.view.MyEditText;
 import com.searun.GIS.view.SelectPicPopupWindow;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 
 /**
  * Created by 陈玉柱 on 2015/7/6.
  */
-public class FreezeRecordFragment extends Fragment implements View.OnClickListener{
+public class FreezeRecordFragment extends  Fragment implements View.OnClickListener{
 
     private Calendar cal = Calendar.getInstance();// 系统时间
     private MyEditText start;
@@ -108,10 +106,6 @@ public class FreezeRecordFragment extends Fragment implements View.OnClickListen
         }).create().show();
     }
 
-    private void doJudgePhoto() {
-        showOptionDialog();
-
-    }
     private final String avatorpath = Environment.getExternalStorageDirectory() + "/xxx/avator/";
     private static final int CAMERA_REQUEST_CODE = 1000;
     private static final int PHOTO_REQUEST_CODE = 1001;
@@ -138,8 +132,18 @@ public class FreezeRecordFragment extends Fragment implements View.OnClickListen
         }
         startActivityForResult(intentFromCapture, CAMERA_REQUEST_CODE);
     }
-    private void getPhotoByPhoto(){
 
+    /**
+     * 重相册获取
+     */
+    private void getPhotoByPhoto(){
+        if (!SDCardUtils.isSDCardEnable()) {
+            T.showShort(getActivity(), getActivity().getResources().getString(R.string.msg_no_sdcard));
+            return;
+        }
+        Intent intent = new Intent(Intent.ACTION_PICK, null);
+        intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        startActivityForResult(intent, PHOTO_REQUEST_CODE);
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -163,8 +167,9 @@ public class FreezeRecordFragment extends Fragment implements View.OnClickListen
                         }
 
                         app.sheariamgepath = sheariamgepath;
-                        L.i("xxx",photographpath);
-                        freezeImageRecode.setImageBitmap(ImageUtil.getimage(photographpath, sheariamgepath, avatorpath));
+                        L.i("xxx", photographpath);
+//                        freezeImageRecode.setImageBitmap(ImageUtil.getimage(photographpath, sheariamgepath, avatorpath));
+                        freezeImageRecode.setImageBitmap(ImageUtil.rotateBitmap(ImageUtil.getimage(photographpath, sheariamgepath, avatorpath),ImageUtil.readPictureDegree(photographpath)));
                     } else {
                         T.showShort(getActivity(), getActivity().getResources().getString(R.string.camera_error));
                     }
@@ -188,7 +193,8 @@ public class FreezeRecordFragment extends Fragment implements View.OnClickListen
                         cursor.moveToFirst();
                         //最后根据索引值获取图片路径
                         String path = cursor.getString(column_index);
-                        freezeImageRecode.setImageBitmap(ImageUtil.getimage(path, sheariamgepath, avatorpath));
+//                        freezeImageRecode.setImageBitmap(ImageUtil.getimage(path, sheariamgepath, avatorpath));
+                        freezeImageRecode.setImageBitmap(ImageUtil.rotateBitmap(ImageUtil.getimage(path, sheariamgepath, avatorpath),ImageUtil.readPictureDegree(path)));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -218,13 +224,7 @@ public class FreezeRecordFragment extends Fragment implements View.OnClickListen
             @Override
             public void onClick(View v) {
 //                CommonUtils.selectSystemPhone(PHOTO_REQUEST_CODE, getActivity());
-                if (!SDCardUtils.isSDCardEnable()) {
-                    T.showShort(getActivity(), getActivity().getResources().getString(R.string.msg_no_sdcard));
-                    return;
-                }
-                Intent intent = new Intent(Intent.ACTION_PICK, null);
-                intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-                startActivityForResult(intent, PHOTO_REQUEST_CODE);
+               getPhotoByPhoto();
                 dialog.dismiss();
             }
         });
@@ -250,7 +250,7 @@ public class FreezeRecordFragment extends Fragment implements View.OnClickListen
                 getDialog(end);
                 break;
             case R.id.freeze_image_recode:
-                doJudgePhoto();
+                showOptionDialog();
                 break;
         }
     }

@@ -16,7 +16,7 @@ import com.searun.GIS.view.MyEditText;
 /**
  * Created by 陈玉柱 on 2015/7/6.
  */
-public class StoreDataFragment extends Fragment{
+public class StoreDataFragment extends  Fragment{
     private String titleString;
     private TextView title;
     private MyEditText username;

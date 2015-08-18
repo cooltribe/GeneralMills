@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+body, div, ul, ol, dl, dt, dd, li, dl
+{margin:0;padding:0;font-family:"Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;color:#666; font-size:14px;} 
+ul ,li{list-style: none;}
+em,i{font-style:normal;}
+a{color:#666;text-decoration:none; } 
+a:visited{color:#666;text-decoration:none;} 
+a:hover{color:#ff6600;text-decoration:none;}
+
+.font-red{ color:#cc0033;}
+.font-blue{ color:#0f7699;}
+a{outline:none; } 
+*:focus { outline: none!important;}
+
+.clear:before, .clear:after {
+display: table;
+line-height: 0;
+content: "";
+}
+.clear:after {
+clear:both;
+}
+.btn-red{ width:90%; background:#cc0033; color:#fff; text-align:center; font-size:18px; border-radius:5px; height:40px; line-height:40px; margin:20px auto; border:0; display:block;}
+.btn-red:hover, .btn-red:focus, .btn-red:active{ background:#9b0026; color:#fff;}
+.btn-redk{ padding:5px 10px; background:#fff; color:#cc0033; border:solid 1px #cc0033; text-align:center; font-size:14px; border-radius:5px;  }
+.btn-redk:hover, .btn-redk:focus, .btn-redk:active{ background:#cc0033; color:#fff;}
+.wrap{ padding:0 20px 20px;}
+.face{ text-align:center; margin:80px 0 40px 0;}
+.login input{ width:100%; border:0; border-bottom:solid 1px #ccc; height:40px; line-height:40px; font-size:18px; padding-left:5px;}
+header{ height:50px; text-align:center; color:#fff; font-size:20px; line-height:50px; background:#cc0033; position:relative;} 
+.btn-left{ width:26px; height:26px; position:absolute; left:15px; top:6px;}
+.btn-right{ width:26px; height:26px; position:absolute; right:15px; top:6px;}
+
+.order-list li span{ display:block; float:left; height:30px; margin:10px 0; }
+.order-list li.bt span{ line-height:30px;}
+.line{ width:32%; text-align:center;}
+.company{  text-align:left; width:41%; padding:0 5px; }
+.state{ width:23%; text-align:center;}
+li.bt .company{ text-align:center; border-left:solid 1px #eee; border-right:solid 1px #eee;width:44%; padding:0;}
+ul.order-list li{ border-bottom:solid 1px #eee; line-height:120%; height:50px;}
+.line-detail li{ position:relative;}
+.line-detail li.zydh{ background:#fafafa; height:40px; line-height:40px; border:solid 1px #eee; border-width:1px 0 1px 0; padding-left:10px; margin-top:8px;}
+.line-detail li.detail{ line-height:150%; border-bottom:solid 1px #eee; position:relative; padding:10px; font-size:14px;}
+i.l-right{ position:absolute; right:10px; display:block; top:0; line-height:40px;}
+.sign-detail{ background:#fafafa; border-bottom:solid 1px #eee; line-height:150%; padding:10px;}
+.check-line{  line-height:40px; border-bottom:solid 1px #eee; text-align:left; padding-left:10px;}
+.check-line1{  height:160px; line-height:160px;  border-bottom:solid 1px #eee; text-align:left; padding-left:10px;}
+.remark{ border:solid 1px #eee; width:180px; height:25px; line-height:25px;}
+i.check{ width:16px; height:16px; background:url(../images/check.png) no-repeat; display:inline-block;}
+i.checked{ width:16px; height:16px; background:url(../images/checked.png) no-repeat; display:inline-block;}
+span.mrpic{ width:157px; height:125px; position:relative; display:inline-block; float:right; padding-top:20px;}
+i.upload{ display:block; position:absolute; top:0; left:40px;}
+.btn-upload{ padding:0 20px; height:30px; line-height:30px; border-radius:15px; background:#666; text-align:center; color:#fff; border:0; font-size:16px;}
+.btn-upload:hover, .btn-upload:focus, .btn-upload:active{ background:#333; color:#fff;}
+.bz{  height:38px; border:0; line-height:38px;  width:200px; margin-left:10px;}
+.null{ margin-top:30px; text-align:center; line-height:150%; font-size:16px;}

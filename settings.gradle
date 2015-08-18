@@ -1,1 +1,1 @@
-include ':app', ':base_library_pullToRefresh_chenyoca'
+include ':base_library_pullToRefresh_chenyoca', ':anima', ':JSAndroid', 'app'

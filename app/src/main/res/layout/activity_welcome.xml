@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+
+
+        <RelativeLayout
+            android:id="@+id/web_button_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:id="@+id/web_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/brower_back_selector"
+                android:onClick="onClickListener" />
+
+            <Button
+                android:id="@+id/web_forward_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/brower_forward_selector"
+                android:onClick="onClickListener" />
+
+            <Button
+                android:id="@+id/web_refresh_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/brower_reload_selector"
+                android:onClick="onClickListener" />
+        </RelativeLayout>
+        <WebView
+            android:id="@+id/web_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/web_button_layout"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

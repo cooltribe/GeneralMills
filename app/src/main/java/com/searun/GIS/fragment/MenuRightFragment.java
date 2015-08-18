@@ -22,7 +22,7 @@ import java.util.List;
  * {@link OnFragmentInteractionListener} interface
  * to handle interaction events.
  */
-public class MenuRightFragment extends Fragment {
+public class MenuRightFragment extends  Fragment{
 
     private OnFragmentInteractionListener mListener;
     private ListView operateStep;

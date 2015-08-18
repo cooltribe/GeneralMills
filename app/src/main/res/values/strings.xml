@@ -21,4 +21,6 @@
     <string name="load_count_string">装载数量</string>
     <string name="operate">操作</string>
     <string name="msg_no_sdcard">没有检测到外部扩展卡,头像、图片和录音均不可以.</string>
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="title_activity_welcome2">WelcomeActivity2</string>
 </resources>
